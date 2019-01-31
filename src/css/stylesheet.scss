@@ -1,28 +1,34 @@
 @charset 'utf-8';
-@import '_normalize';
-@import '_normalizeCustomConfig';
-@import '_variable';
-@import '_font';
-@import '_debugger';
+@import '_variables';
 @import '_mediaQuery';
 
+html {
+  box-sizing: border-box;
+  font-family: $ffBody
+}
 
+*, *::before, *::after {
+  box-sizing: inherit;
+}
 
-// ELEMENT LEVEL ----------------------------------------------------------------------------------
-
-
-// CLASS LEVEL ------------------------------------------------------------------------------------
-.mainWrapper {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
-  width: 100vw;
+// 999 calculations
+p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.35;
   @include tablet {
-    flex-direction: initial;
+    font-size: 16px;
+    line-height: 1.45;
   }
   @include desktop {
-    flex-direction: initial;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+}
+
+.paragraphSet {
+  border: 1px dashed red;
+  & + .paragraphSet {
+    margin-top: 1em;
   }
 }
