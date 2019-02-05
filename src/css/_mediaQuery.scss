@@ -12,3 +12,9 @@ $desktop: "(min-width: 1024px)";
     @content;
   }
 }
+
+@mixin noCursor {
+  @media (any-pointer: coarse) {
+    @content;
+  }
+}
