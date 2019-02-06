@@ -17,59 +17,68 @@ html {
 code {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-size: 10px;
+  justify-content: left;
+  font-size: 12px;
   font-weight: bolder;
   letter-spacing: 0.2px;
-  margin: 0 0 16px 0;
+  margin: 0 0 8px -2px;
+  padding: 0 0 8px 0;
+  width: 100%;
+  border-bottom: 1px solid #cccccc;
   text-transform: uppercase; }
 
 p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.35;
   margin: 0;
   position: relative;
   white-space: pre; }
   p::before {
     background-color: #d9f9ff;
-    height: 16px; }
+    height: 18px; }
   p:not(:last-of-type)::after {
     background-color: #ffd1f8;
     bottom: 0;
-    height: calc(16px * 0.35); }
+    height: calc(18px * 0.35); }
   p:last-of-type {
     line-height: 1; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    p {
-      font-size: 16px;
-      line-height: 1.45; } }
-  @media (min-width: 1024px) {
-    p {
-      font-size: 18px;
-      line-height: 1.55; } }
 
-.blockC {
+.fontSizeKey {
   display: inline-block;
-  width: 16px;
-  height: 16px;
+  border-radius: 500px;
+  width: 20px;
+  height: 20px;
   background-color: #d9f9ff;
   margin: 0 4px 0 0; }
 
-.blockM {
+.lineHeightKey {
   display: inline-block;
-  width: 16px;
-  height: 16px;
+  border-radius: 500px;
+  width: 20px;
+  height: 20px;
   background-color: #ffd1f8;
   margin: 0 4px 0 0; }
 
 .paragraphContainer {
-  padding: 16px 0;
-  border-top: 1px dashed #777777; }
+  padding: 0 0 72px 0;
+  overflow: hidden; }
   .paragraphContainer:hover p::before, .paragraphContainer:hover p::after {
     opacity: 1; }
   @media (any-pointer: coarse) {
     .paragraphContainer p::before, .paragraphContainer p::after {
       opacity: 1; } }
+
+.paragraphBlock.fs10px p {
+  font-size: 10px; }
+
+.paragraphBlock.fs14px p {
+  font-size: 14px; }
+
+.paragraphBlock.fs18px p {
+  font-size: 18px; }
+
+.paragraphBlock.lh135 {
+  line-height: 1.35; }
 
 .paragraphBlock + .paragraphBlock {
   margin-top: 16px; }

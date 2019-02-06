@@ -24,16 +24,19 @@ html {
 code {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-size: 10px;
+  justify-content: left;
+  font-size: 12px;
   font-weight: bolder;
   letter-spacing: 0.2px;
-  margin: 0 0 16px 0;
+  margin: 0 0 8px -2px;
+  padding: 0 0 8px 0;
+  width: 100%;
+  border-bottom: 1px solid $colorLightGray;
   text-transform: uppercase;
 }
 
 p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.35;
   margin: 0;
   position: relative;
@@ -41,46 +44,49 @@ p {
   &::before {
     @extend %pseudoElement;
     background-color: $colorC;
-    height: 16px;
+    height: 18px;
   }
   &:not(:last-of-type)::after {
     @extend %pseudoElement;
     background-color: $colorM;
     bottom: 0;
-    height: calc(16px * 0.35);
+    height: calc(18px * 0.35);
   }
   &:last-of-type {
     line-height: 1;
   }
   @include tablet {
-    font-size: 16px;
-    line-height: 1.45;
+    // font-size: 16px;
+    // line-height: 1.45;
   }
   @include desktop {
-    font-size: 18px;
-    line-height: 1.55;
+    // font-size: 18px;
+    // line-height: 1.55;
   }
 }
 
-.blockC {
+.fontSizeKey {
   display: inline-block;
-  width: 16px;
-  height: 16px;
+  border-radius: 500px;
+  width: 20px;
+  height: 20px;
   background-color: $colorC;
   margin: 0 4px 0 0;
 }
 
-.blockM {
+.lineHeightKey {
   display: inline-block;
-  width: 16px;
-  height: 16px;
+  border-radius: 500px;
+  width: 20px;
+  height: 20px;
   background-color: $colorM;
   margin: 0 4px 0 0;
 }
 
 .paragraphContainer {
-  padding: 16px 0;
-  border-top: 1px dashed $colorGray;
+  padding: 0 0 72px 0;
+  overflow: hidden;
+  // border-top: 1px dashed $colorGray;
   &:hover p::before, &:hover p::after {
     opacity: 1;
   }
@@ -93,6 +99,18 @@ p {
 
 .paragraphBlock {
   // border: 1px dashed red;
+  &.fs10px p {
+    font-size: 10px;
+  }
+  &.fs14px p {
+    font-size: 14px;
+  }
+  &.fs18px p {
+    font-size: 18px;
+  }
+  &.lh135 {
+    line-height: 1.35;
+  }
   & + .paragraphBlock {
     margin-top: 16px;
   }
