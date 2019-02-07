@@ -44,13 +44,11 @@ p {
   &::before {
     @extend %pseudoElement;
     background-color: $colorC;
-    height: 18px;
+    top: 0;
   }
   &:not(:last-of-type)::after {
     @extend %pseudoElement;
     background-color: $colorM;
-    bottom: 0;
-    height: calc(18px * 0.35);
   }
   &:last-of-type {
     line-height: 1;
@@ -86,7 +84,6 @@ p {
 .paragraphContainer {
   padding: 0 0 72px 0;
   overflow: hidden;
-  // border-top: 1px dashed $colorGray;
   &:hover p::before, &:hover p::after {
     opacity: 1;
   }
@@ -98,18 +95,41 @@ p {
 }
 
 .paragraphBlock {
-  // border: 1px dashed red;
   &.fs10px p {
-    font-size: 10px;
+    font-size: 10px !important;
+    &::before {
+      height: 10px;
+    }
+    &:not(:last-of-type)::after {
+      height: calc(10px * 0.35);
+      top: 10px;
+    }
   }
   &.fs14px p {
-    font-size: 14px;
+    font-size: 14px !important;
+    &::before {
+      height: 14px;
+    }
+    &:not(:last-of-type)::after {
+      height: calc(14px * 0.35);
+      top: 14px;
+    }
   }
   &.fs18px p {
-    font-size: 18px;
+    font-size: 18px !important;
+    &::before {
+      height: 18px;
+    }
+    &:not(:last-of-type)::after {
+      height: calc(18px * 0.55);
+      top: 18px;
+    }
   }
-  &.lh135 {
-    line-height: 1.35;
+  &.lh135 p {
+    line-height: 1.35 !important;
+  }
+  &.lh155 p {
+    line-height: 1.55 !important;
   }
   & + .paragraphBlock {
     margin-top: 16px;
