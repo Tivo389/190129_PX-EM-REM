@@ -16,7 +16,7 @@ class App extends Component {
           </ParagraphContainer>
         <ParagraphContainer
           fontSize="18px"
-          lineHeight="1.35">
+          lineHeight="1.55">
           </ParagraphContainer>
       </Fragment>
     );

@@ -35,11 +35,9 @@ p {
   white-space: pre; }
   p::before {
     background-color: #d9f9ff;
-    height: 18px; }
+    top: 0; }
   p:not(:last-of-type)::after {
-    background-color: #ffd1f8;
-    bottom: 0;
-    height: calc(18px * 0.35); }
+    background-color: #ffd1f8; }
   p:last-of-type {
     line-height: 1; }
 
@@ -69,16 +67,34 @@ p {
       opacity: 1; } }
 
 .paragraphBlock.fs10px p {
-  font-size: 10px; }
+  font-size: 10px !important; }
+  .paragraphBlock.fs10px p::before {
+    height: 10px; }
+  .paragraphBlock.fs10px p:not(:last-of-type)::after {
+    height: calc(10px * 0.35);
+    top: 10px; }
 
 .paragraphBlock.fs14px p {
-  font-size: 14px; }
+  font-size: 14px !important; }
+  .paragraphBlock.fs14px p::before {
+    height: 14px; }
+  .paragraphBlock.fs14px p:not(:last-of-type)::after {
+    height: calc(14px * 0.35);
+    top: 14px; }
 
 .paragraphBlock.fs18px p {
-  font-size: 18px; }
+  font-size: 18px !important; }
+  .paragraphBlock.fs18px p::before {
+    height: 18px; }
+  .paragraphBlock.fs18px p:not(:last-of-type)::after {
+    height: calc(18px * 0.55);
+    top: 18px; }
 
-.paragraphBlock.lh135 {
-  line-height: 1.35; }
+.paragraphBlock.lh135 p {
+  line-height: 1.35 !important; }
+
+.paragraphBlock.lh155 p {
+  line-height: 1.55 !important; }
 
 .paragraphBlock + .paragraphBlock {
   margin-top: 16px; }
